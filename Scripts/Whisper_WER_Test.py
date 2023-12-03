@@ -1,14 +1,14 @@
-#Sourcecode from Hugging Face @ https://huggingface.co/openai/whisper-base for testing purposes
+#Sourcecode from Hugging Face @ https://huggingface.co/openai/whisper-medium for testing purposes
 
 from datasets import load_dataset
 from transformers import WhisperForConditionalGeneration, WhisperProcessor
 import torch
 from evaluate import load
+import torch
+from transformers import pipeline
+from datasets import load_dataset
 
-librispeech_test_clean = load_dataset("librispeech_asr", "clean", split="test")
 
-processor = WhisperProcessor.from_pretrained("openai/whisper-base")
-model = WhisperForConditionalGeneration.from_pretrained("openai/whisper-base").to("cuda")
 
 def map_to_pred(batch):
     audio = batch["audio"]
@@ -21,7 +21,35 @@ def map_to_pred(batch):
     batch["prediction"] = processor.tokenizer._normalize(transcription)
     return batch
 
-result = librispeech_test_clean.map(map_to_pred)
+if __name__ == "__main__":
 
-wer = load("wer")
-print(100 * wer.compute(references=result["reference"], predictions=result["prediction"]))
+    librispeech_test_clean = load_dataset("librispeech_asr", "clean", split="test")
+
+    processor = WhisperProcessor.from_pretrained("openai/whisper-medium.en")
+
+    model = WhisperForConditionalGeneration.from_pretrained("openai/whisper-medium.en").to("cuda")
+
+    result = librispeech_test_clean.map(map_to_pred)
+
+    device = "cuda:0" if torch.cuda.is_available() else "cpu"
+
+    pipe = pipeline(
+    "automatic-speech-recognition",
+    model="openai/whisper-medium.en",
+    chunk_length_s=30,
+    device=device,
+    )
+
+    ds = load_dataset("hf-internal-testing/librispeech_asr_dummy", "clean", split="validation")
+    sample = ds[0]["audio"]
+
+    prediction = pipe(sample.copy(), batch_size=8)["text"]
+    " Mr. Quilter is the apostle of the middle classes, and we are glad to welcome his gospel."
+
+    # we can also return timestamps for the predictions
+    prediction = pipe(sample.copy(), batch_size=8, return_timestamps=True)["chunks"]
+    [{'text': ' Mr. Quilter is the apostle of the middle classes and we are glad to welcome his gospel.',
+    'timestamp': (0.0, 5.44)}]
+
+    wer = load("wer")
+    print(100 * wer.compute(references=result["reference"], predictions=result["prediction"]))
