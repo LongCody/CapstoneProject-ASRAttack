@@ -6,7 +6,7 @@ export default function NavBar() {
             <Link to="/" className="site-title">ASR Attack</Link>
             <ul>
                 <li><Link to="/">Home</Link></li>
-                <li><Link to="/video">Video</Link></li>
+                <li><Link to="/videos">Videos</Link></li>
                 <li><Link to="/try-it">Try It</Link></li>
                 <li><Link to="/about">About</Link></li>
             </ul>

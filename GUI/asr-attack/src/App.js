@@ -1,6 +1,6 @@
 import NavBar from "./NavBar";
 import Home from "./pages/Home";
-import Video from "./pages/Video";
+import Videos from "./pages/Videos";
 import Try from "./pages/Try";
 import About from "./pages/About";
 import { Route, Routes } from 'react-router-dom';
@@ -12,7 +12,7 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/video" element={<Video />} />
+          <Route path="/videos" element={<Videos />} />
           <Route path="/try-it" element={<Try />} />
           <Route path="/about" element={<About />} />
         </Routes>
