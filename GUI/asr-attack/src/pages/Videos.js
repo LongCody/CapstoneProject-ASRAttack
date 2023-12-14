@@ -5,6 +5,7 @@ import video3 from "./videos/video3.mp4"
 import video4 from "./videos/video4.mp4"
 
 export default function videos() {
+    //Video page assets
     return (
       <div className="video">
         <h1>Video 1</h1>
