@@ -6,6 +6,7 @@ import About from "./pages/About";
 import { Route, Routes } from 'react-router-dom';
 
 function App() {
+  //Base of the app and its react components
   return (
     <>
       <NavBar />
