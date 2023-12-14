@@ -6,6 +6,7 @@ import "./styles.css";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  //Connects html to React components
   <React.StrictMode>
     <BrowserRouter>
       <App />
