@@ -7,14 +7,16 @@ import whisper
 
 input_file = "example_filename.wav" #name of file to be transcribed
 output_file = "example_audio_transcription.txt" #name of file being created of transcription
+#add expected_audio_output transcription file
 
-model = whisper.load_model("medium.en") #load whisper medium model for english only transcriptions
-transcription = model.transcribe(input_file) #save transciption of file into memory as variable audioTranscription
+ASR_model = whisper.load_model("medium.en") #load whisper medium model for english only transcriptions
+transcription = ASR_model.transcribe(input_file) #save transciption of file into memory as variable audioTranscription
 
-text_transcription = transcription("text")
+text_transcription = transcription["text"] #saves the text transcription as a readable string
+#compare if the transcription matches the expected output
 
-print(text_transcription)
+#print(text_transcription) #print to test out speech to text functionality
 
-#with open(output_file, "w") as output: #Write transcription into the predesignated output file name
-#    output.write(text_transcription)
+with open(output_file, "w") as output: #Write transcription into the predesignated output file name
+    output.write(text_transcription)
 
