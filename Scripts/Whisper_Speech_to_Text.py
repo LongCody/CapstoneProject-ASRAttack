@@ -5,7 +5,7 @@ import whisper
 #Add Feature: Input system arguement to for file name to transcribe and target .txt file transcription name
 #Use this space to add feature
 
-input_file = "example_filename.wav" #name of file to be transcribed
+input_file = "adversarial0.wav" #name of file to be transcribed
 output_file = "example_audio_transcription.txt" #name of file being created of transcription
 #add expected_audio_output transcription file
 
