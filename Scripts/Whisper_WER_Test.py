@@ -57,3 +57,4 @@ if __name__ == "__main__":
     #Print word rate error
     wer = load("wer")
     print(100 * wer.compute(references=result["reference"], predictions=result["prediction"]))
+ 
