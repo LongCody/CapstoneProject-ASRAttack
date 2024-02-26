@@ -6,5 +6,10 @@ import unittest.mock
 
 class Test_ASRProject(unittest.TestCase):
     
-    def test_rpi():
+    def test_rpi(self):
         pass
+    
+    
+if __name__ == "__main__":
+  unittest.main()
+  
