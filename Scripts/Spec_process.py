@@ -12,7 +12,7 @@ def preprocess_spec(root_dir, output_dir): # Walks through the directory and the
 
     file_count = 1
 
-    for subdir, dirs, files in os.walk(root_dir):
+    for subdir, dir, files in os.walk(root_dir):
         for file in files:
             file_path = os.path.join(subdir, file)
             print(f"Processing file: {file_path}")
@@ -28,6 +28,7 @@ def preprocess_spec(root_dir, output_dir): # Walks through the directory and the
                 plt.pcolormesh(bins, freqs, 10 * np.log10(Pxx))  # Plot in dB scale
                 plt.axis('off')
                 plt.savefig(spec_output_path, bbox_inches='tight', pad_inches=0)
+          
 
             elif file.endswith('.txt'): # Writes the text transcription
                 output_path = os.path.join(output_dir, file)
@@ -38,6 +39,6 @@ def preprocess_spec(root_dir, output_dir): # Walks through the directory and the
 
 
 if __name__ == "__main__":
-    root_dir = "../Project test/train-clean-100/LibriSpeech/train-clean-100"
-    output_dir = "../spectrogram/LibriSpeech/png"
+    root_dir = "../Project test/dev-clean/LibriSpeech/dev-clean"
+    output_dir = "../spectrogram/png"
     preprocess_spec(root_dir, output_dir)
