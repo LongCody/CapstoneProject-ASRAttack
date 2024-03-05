@@ -82,7 +82,7 @@ whisper_medium = 'whisper_medium'
 #Defenses
 quantization = "quantization"
 
-whisper_medium = whisper.load_model("medium.en")
+#whisper_medium = whisper.load_model("medium.en")
 
 def transcribe(my_path,model):
 
@@ -370,7 +370,7 @@ if __name__ == '__main__':
     audio_file = args.inputfile.split('/')[-1]
     raster_width = [100]
 
-    models = [whisper_medium]
+    models = [google]
     attack = [args.attack]
     start = datetime.datetime.now()
     # Run attack
