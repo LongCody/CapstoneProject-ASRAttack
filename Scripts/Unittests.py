@@ -6,6 +6,9 @@ import pvporcupine
 from Spec_process import preprocess_spec
 import os
 from rpi import run_speech_func
+import sys
+sys.path.append('/home/cjcclong/git/CapstoneProject-ASRAttack/Scripts/KenansvilleAttack')
+from KenansvilleAttack.kenan_attack import transcribe
 
 
 
@@ -20,7 +23,22 @@ class Test_RPI(unittest.TestCase):
       porc_mock.return_value = MagicMock() #create mock return value
       pvporcupine.create(access_key=access_key, keywords=keywords)
       porc_mock.assert_called_once_with(access_key=access_key, keywords=keywords) #makes sure create method was called
-          
+
+
+class Test_Kenansville(unittest.TestCase):
+  
+  def test_transcribe_google(self):
+    path = '/home/cjcclong/seniorproject/example_filename.wav'
+    
+    transcription = "the stale smell of old beer lingers it takes heat to bring out the odor a cold dip restores health and zest a salt pickle taste fine with ham tacos al pastor are my favorite a zestful food is the hot cross bun"
+    
+    result = transcribe(path, 'google')
+
+    self.assertEqual(result, transcription)
+
+
+    
+ 
 
         
 

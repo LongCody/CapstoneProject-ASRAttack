@@ -82,7 +82,7 @@ whisper_medium = 'whisper_medium'
 #Defenses
 quantization = "quantization"
 
-whisper_medium = whisper.load_model("medium.en")
+#whisper_medium = whisper.load_model("medium.en")
 
 def transcribe(my_path,model):
 
