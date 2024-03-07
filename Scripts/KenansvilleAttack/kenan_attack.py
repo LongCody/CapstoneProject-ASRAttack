@@ -35,9 +35,9 @@ import whisper
 
 #Parsing commandline input flags
 parser = argparse.ArgumentParser()
-parser.add_argument("-ifile", "--inputfile", help="input audio file location")
-parser.add_argument("-ofile","--outputfile",help="output file with full file location")
-parser.add_argument("-a","--attack",help="Attack type, either ssa or fft")
+parser.add_argument("-ifile", "--inputfile", help="mnt/c/Users/zstra/OneDrive/Documents/Cs 425/Official Capstone Project/CapstoneProject-ASRAttack/Scripts/Kenansville Attack/record_out.wav")
+parser.add_argument("-ofile","--outputfile",help="mnt/c/Users/zstra/OneDrive/Documents/Cs 425/Project test/AE/output.wav")
+parser.add_argument("-a","--attack",help="fft")
 # parser.add_argument("","",help=)
 # parser.add_argument("","",help=)
 
@@ -99,10 +99,12 @@ def transcribe(my_path,model):
             return "None"#print("Google: -_-")
         except sr.RequestError as e:
            print("Google error; {0}".format(e))
+           
+    #Contribution of team
     if(model == whisper_medium):
         transcription = whisper_medium.transcribe(audio) #save transciption of file into memory as variable audioTranscription
-        return transcription["text"]
-
+        return transcription["text" , "None"]
+    #___________________________________________________________________________________________________________________________
 
 def normalize(data):
     normalized = data.ravel()*1.0/np.amax(np.abs(data.ravel()))
@@ -370,7 +372,7 @@ if __name__ == '__main__':
     audio_file = args.inputfile.split('/')[-1]
     raster_width = [100]
 
-    models = [whisper_medium]
+    models = [google]
     attack = [args.attack]
     start = datetime.datetime.now()
     # Run attack
@@ -380,3 +382,4 @@ if __name__ == '__main__':
 
     delta =  end - start
     print('Total Time '+str(delta))
+    

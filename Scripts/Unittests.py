@@ -9,6 +9,8 @@ from rpi import run_speech_func
 
 
 
+
+
 class Test_RPI(unittest.TestCase):
     
   def test_run_speech_keywords(self):
@@ -19,11 +21,6 @@ class Test_RPI(unittest.TestCase):
       pvporcupine.create(access_key=access_key, keywords=keywords)
       porc_mock.assert_called_once_with(access_key=access_key, keywords=keywords) #makes sure create method was called
           
-
-
-
-    
- 
 
         
 

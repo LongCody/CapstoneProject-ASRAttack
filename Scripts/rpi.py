@@ -3,10 +3,17 @@ import pvporcupine
 import struct
 from pygame import mixer
 import time
+import random
 
 
 
 def run_speech_func():
+    
+    ae = ['/mnt/c/Users/zstra/OneDrive/Documents/Cs 425/Official Capstone Project/CapstoneProject-ASRAttack/Scripts/record_out_48000_FFT_1950767_BST.wav',
+          '/mnt/c/Users/zstra/OneDrive/Documents/Cs 425/Official Capstone Project/CapstoneProject-ASRAttack/Scripts/synthesize1_24000_FFT_1434637_BST.wav',
+          '/mnt/c/Users/zstra/OneDrive/Documents/Cs 425/Official Capstone Project/CapstoneProject-ASRAttack/Scripts/synthesize2_24000_FFT_2511508_BST.wav']
+    
+    mixer.init() #Initialzing pyamge mixer
     
     porcupine = None
     audio = None
@@ -49,19 +56,17 @@ def run_speech_func():
                 # Perform your desired reaction here
                 print("Sound detected!")
                 
-                '''
+                ae_rand = random.choice(ae)
                 
-                mixer.init() #Initialzing pyamge mixer
+                ae_play = mixer.Sound(ae_rand)
 
-                mixer.music.load('We Are The Champions (Remastered 2011).mp3') #Loading Music File
-
-                mixer.music.play() #Playing Music with Pygame
+                ae_play.play() #Playing sound
 
                 time.sleep(10)
 
 
-                mixer.music.stop()
-                '''
+                mixer.stop()
+        
                 
     finally:
     # Stop and close the microphone stream
