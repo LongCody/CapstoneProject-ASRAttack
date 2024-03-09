@@ -30,6 +30,7 @@ import sys
 import io
 import argparse
 import whisper
+import torch
 
 # NOTE: Should we remove SSA or tell them how to get it?
 
@@ -37,7 +38,7 @@ import whisper
 parser = argparse.ArgumentParser()
 parser.add_argument("-ifile", "--inputfile", help="mnt/c/Users/zstra/OneDrive/Documents/Cs 425/Official Capstone Project/CapstoneProject-ASRAttack/Scripts/Kenansville Attack/record_out.wav")
 parser.add_argument("-ofile","--outputfile",help="mnt/c/Users/zstra/OneDrive/Documents/Cs 425/Project test/AE/output.wav")
-parser.add_argument("-a","--attack",help="fft")
+parser.add_argument("-a","--attack",help="ssa")
 # parser.add_argument("","",help=)
 # parser.add_argument("","",help=)
 
@@ -78,11 +79,12 @@ sphinx = 'sphinx'
 deepspeech = 'deepspeech'
 google = 'google'
 whisper_medium = 'whisper_medium'
+wav2vec = 'wav2vec'
 
 #Defenses
 quantization = "quantization"
 
-#whisper_medium = whisper.load_model("medium.en")
+whisp = whisper.load_model("medium.en")
 
 def transcribe(my_path,model):
 
@@ -101,9 +103,17 @@ def transcribe(my_path,model):
            print("Google error; {0}".format(e))
            
     #Contribution of team
-    if(model == whisper_medium):
-        transcription = whisper_medium.transcribe(audio) #save transciption of file into memory as variable audioTranscription
-        return transcription["text" , "None"]
+    if model == whisper_medium:
+        # Convert AudioData to NumPy array
+        transcription = whisp.transcribe(my_path)
+        text_transcription = transcription["text"]
+        if "text" in transcription:
+            return text_transcription
+        else:
+            return "None"
+        
+    if model == wav2vec:
+        pass
     #___________________________________________________________________________________________________________________________
 
 def normalize(data):
@@ -372,7 +382,7 @@ if __name__ == '__main__':
     audio_file = args.inputfile.split('/')[-1]
     raster_width = [100]
 
-    models = [google]
+    models = [whisper_medium]
     attack = [args.attack]
     start = datetime.datetime.now()
     # Run attack
