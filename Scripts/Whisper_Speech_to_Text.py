@@ -5,7 +5,7 @@ import whisper
 #Add Feature: Input system arguement to for file name to transcribe and target .txt file transcription name
 #Use this space to add feature
 def transcription():
-    input_file = "example_filename.wav" #name of file to be transcribed
+    input_file = "/mnt/c/Users/zstra/OneDrive/Documents/Cs 425/PROJECT RESOURCES/Project test/AE/song/record_out_48000_FFT_3901535_BST.wav"
     output_file = "output.txt" #name of file being created of transcription
     #add expected_audio_output transcription file
 
