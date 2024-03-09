@@ -21,7 +21,7 @@ def run_speech_func():
 
     try:
         # Constants
-        THRESHOLD = 100  # Adjust this value to set the audio threshold for reaction
+        THRESHOLD = 0  # Adjust this value to set the audio threshold for reaction
         
         access_key = "DXuszknRNvWjNp/jed0rQXB64vNUOyyDyoCuSIY25sQOkmO4TmmxWw==" 
         
