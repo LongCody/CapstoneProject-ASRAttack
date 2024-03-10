@@ -35,9 +35,9 @@ import whisper
 
 #Parsing commandline input flags
 parser = argparse.ArgumentParser()
-parser.add_argument("-ifile", "--inputfile", help="mnt/c/Users/zstra/OneDrive/Documents/Cs 425/Official Capstone Project/CapstoneProject-ASRAttack/Scripts/Kenansville Attack/record_out.wav")
-parser.add_argument("-ofile","--outputfile",help="mnt/c/Users/zstra/OneDrive/Documents/Cs 425/Project test/AE/output.wav")
-parser.add_argument("-a","--attack",help="fft")
+parser.add_argument("-ifile", "--inputfile", help="/home/cjcclong/git/CapstoneProject-ASRAttack/Scripts/KenansvilleAttack/synthesize1.wav")
+parser.add_argument("-ofile","--outputfile",help="/home/cjcclong/git/CapstoneProject-ASRAttack/Scripts/output.wav")
+parser.add_argument("-a","--attack",help="ssa")
 # parser.add_argument("","",help=)
 # parser.add_argument("","",help=)
 
