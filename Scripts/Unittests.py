@@ -15,7 +15,14 @@ from KenansvilleAttack.kenan_attack import transcribe
 
 
 class Test_RPI(unittest.TestCase):
+  
     
+  def test_keywords(self):
+    result = run_speech_func()
+    self.assertTrue(result)
+    self.assertIn("hey google", result) #Asserts that hey google called
+    self.assertNotIn("hello", result) #Asserts word is not in result
+  
   def test_run_speech_keywords(self):
     with patch('rpi.pvporcupine.create') as porc_mock: 
       access_key = "DXuszknRNvWjNp/jed0rQXB64vNUOyyDyoCuSIY25sQOkmO4TmmxWw==" #create access key and keywords from porcupine
