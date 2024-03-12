@@ -4,11 +4,17 @@ import struct
 from pygame import mixer
 import time
 import random
+import signal
+import sys
 
-
+def handler(signum, frame):
+    sys.exit()
 
 def run_speech_func():
-    
+
+    signal.signal(signal.SIGALRM, handler)
+    signal.alarm(15)
+
     ae = ['/home/tnilab/Capstone project/asrattack/CapstoneProject-ASRAttack/Scripts/synthesize1_24000_FFT_1434637_BST.wav',
           '/home/tnilab/Capstone project/asrattack/CapstoneProject-ASRAttack/Scripts/synthesize2_24000_FFT_2511508_BST.wav',
           '/home/tnilab/Capstone project/asrattack/CapstoneProject-ASRAttack/Scripts/record_out_48000_FFT_1950767_BST.wav']
