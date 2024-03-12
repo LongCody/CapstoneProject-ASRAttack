@@ -9,10 +9,10 @@ import random
 
 def run_speech_func():
     
-    ae = ['/mnt/c/Users/zstra/OneDrive/Documents/Cs 425/Official Capstone Project/CapstoneProject-ASRAttack/Scripts/record_out_48000_FFT_1950767_BST.wav',
-          '/mnt/c/Users/zstra/OneDrive/Documents/Cs 425/Official Capstone Project/CapstoneProject-ASRAttack/Scripts/synthesize1_24000_FFT_1434637_BST.wav',
-          '/mnt/c/Users/zstra/OneDrive/Documents/Cs 425/Official Capstone Project/CapstoneProject-ASRAttack/Scripts/synthesize2_24000_FFT_2511508_BST.wav']
-    
+    ae = ['/home/tnilab/Capstone project/asrattack/CapstoneProject-ASRAttack/Scripts/synthesize1_24000_FFT_1434637_BST.wav',
+          '/home/tnilab/Capstone project/asrattack/CapstoneProject-ASRAttack/Scripts/synthesize2_24000_FFT_2511508_BST.wav',
+          '/home/tnilab/Capstone project/asrattack/CapstoneProject-ASRAttack/Scripts/record_out_48000_FFT_1950767_BST.wav']
+
     mixer.init() #Initialzing pyamge mixer
     
     porcupine = None
@@ -21,11 +21,11 @@ def run_speech_func():
 
     try:
         # Constants
-        THRESHOLD = 100  # Adjust this value to set the audio threshold for reaction
+        THRESHOLD = 0  # Adjust this value to set the audio threshold for reaction
         
         access_key = "DXuszknRNvWjNp/jed0rQXB64vNUOyyDyoCuSIY25sQOkmO4TmmxWw==" 
         
-        porcupine = pvporcupine.create(access_key=access_key,keywords=['alexa', 'bumblebee'])
+        porcupine = pvporcupine.create(access_key=access_key,keywords=['alexa', 'hey google'])
 
         
         # Initialize PyAudio
@@ -74,8 +74,8 @@ def run_speech_func():
         if porcupine is not None:
             porcupine.delete()
         
-        #if audio is not None:
-        # stream.close()
+        if audio is None:
+            stream.close()
             
         if stream is not None:
             audio.terminate()
