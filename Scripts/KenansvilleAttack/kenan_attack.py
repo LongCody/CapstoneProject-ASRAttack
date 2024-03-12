@@ -2,12 +2,14 @@
 import speech_recognition as sr
 from os import path
 import os.path
+from transformers import Wav2Vec2ForCTC, Wav2Vec2Processor
 from ssa_core import ssa, ssa_predict, ssaview, inv_ssa, ssa_cutoff_order
 from os import system
 from os import listdir
 from os.path import isfile, join
 import wave
 import scipy as sc
+import soundfile as sf
 import librosa
 import IPython.display as ipd
 import numpy as np
@@ -113,7 +115,24 @@ def transcribe(my_path,model):
             return "None"
         
     if model == wav2vec:
-        pass
+        # load model and tokenizer
+        processor = Wav2Vec2Processor.from_pretrained("facebook/wav2vec2-base-960h")
+        model = Wav2Vec2ForCTC.from_pretrained("facebook/wav2vec2-base-960h")
+     
+        # load dummy dataset and read soundfiles
+        #ds = load_dataset("zachary24/librispeech_train_clean_100", split="validation")
+        audio = my_path
+        data, samplerate = sf.read(audio)
+ 
+        # tokenize
+        input_values = processor(data, return_tensors="pt", padding="longest").input_values  # Batch size 1
+ 
+        # retrieve logits
+        logits = model(input_values).logits
+ 
+        # take argmax and decode
+        predicted_ids = torch.argmax(logits, dim=-1)
+        transcription = processor.batch_decode(predicted_ids)
     #___________________________________________________________________________________________________________________________
 
 def normalize(data):
