@@ -7,6 +7,7 @@ from ssa_core import ssa, ssa_predict, ssaview, inv_ssa, ssa_cutoff_order
 from os import system
 from os import listdir
 from os.path import isfile, join
+from datasets import load_dataset
 import wave
 import scipy as sc
 import soundfile as sf
@@ -38,9 +39,9 @@ import torch
 
 #Parsing commandline input flags
 parser = argparse.ArgumentParser()
-parser.add_argument("-ifile", "--inputfile", help="/home/cjcclong/git/CapstoneProject-ASRAttack/Scripts/KenansvilleAttack/synthesize1.wav")
+parser.add_argument("-ifile", "--inputfile", help="/home/cjcclong/newnew/CapstoneProject-ASRAttack/Scripts/KenansvilleAttack/willthisswork.wav")
 parser.add_argument("-ofile","--outputfile",help="/home/cjcclong/git/CapstoneProject-ASRAttack/Scripts/output.wav")
-parser.add_argument("-a","--attack",help="ssa")
+parser.add_argument("-a","--attack",help="fft")
 # parser.add_argument("","",help=)
 # parser.add_argument("","",help=)
 
@@ -86,8 +87,6 @@ wav2vec = 'wav2vec'
 #Defenses
 quantization = "quantization"
 
-whisp = whisper.load_model("medium.en")
-
 def transcribe(my_path,model):
 
     # use the audio file as the audio source
@@ -106,6 +105,7 @@ def transcribe(my_path,model):
            
     #Contribution of team
     if model == whisper_medium:
+        whisp = whisper.load_model("medium.en")
         # Convert AudioData to NumPy array
         transcription = whisp.transcribe(my_path)
         text_transcription = transcription["text"]
@@ -115,17 +115,16 @@ def transcribe(my_path,model):
             return "None"
         
     if model == wav2vec:
+ 
         # load model and tokenizer
         processor = Wav2Vec2Processor.from_pretrained("facebook/wav2vec2-base-960h")
         model = Wav2Vec2ForCTC.from_pretrained("facebook/wav2vec2-base-960h")
      
         # load dummy dataset and read soundfiles
-        #ds = load_dataset("zachary24/librispeech_train_clean_100", split="validation")
         audio = my_path
-        data, samplerate = sf.read(audio)
- 
+        audio, rate = librosa.load(audio, sr=16000)
         # tokenize
-        input_values = processor(data, return_tensors="pt", padding="longest").input_values  # Batch size 1
+        input_values = processor(audio, return_tensors="pt", sampling_rate = 16_000).input_values  # Batch size 1
  
         # retrieve logits
         logits = model(input_values).logits
@@ -133,6 +132,9 @@ def transcribe(my_path,model):
         # take argmax and decode
         predicted_ids = torch.argmax(logits, dim=-1)
         transcription = processor.batch_decode(predicted_ids)
+        return transcription[0] if transcription else None
+
+        #print(transcription)
     #___________________________________________________________________________________________________________________________
 
 def normalize(data):
@@ -401,7 +403,7 @@ if __name__ == '__main__':
     audio_file = args.inputfile.split('/')[-1]
     raster_width = [100]
 
-    models = [whisper_medium]
+    models = [wav2vec]
     attack = [args.attack]
     start = datetime.datetime.now()
     # Run attack
