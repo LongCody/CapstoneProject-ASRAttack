@@ -5,7 +5,7 @@ from unittest.mock import MagicMock, patch
 import pvporcupine
 from Spec_process import preprocess_spec
 import os
-from rpi import run_speech_func
+from Raspberry_PI import run_speech_func
 import sys
 sys.path.append('/home/cjcclong/git/CapstoneProject-ASRAttack/Scripts/KenansvilleAttack')
 from KenansvilleAttack.kenan_attack import transcribe
