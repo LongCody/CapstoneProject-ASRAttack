@@ -185,6 +185,27 @@ def fft_compression(path,audio_image,factor,fs):
     new_audio_path = path[0:-4]+'_'+str(fs)+'_FFT_'+str(factor)+'.wav'
     return new_audio_path, np.asarray(ifft_audio,dtype=np.int16)
 
+def dct_compression(path, audio_image, factor, fs):
+    '''
+    DCT Attack
+    path: path to audio file
+    Audio_image: audio file as an np.array object
+    factor: the intensity below which you want to zero out
+    fs: sample rate
+    '''
+    # Take DCT
+    dct_image = sc.fftpack.dct(audio_image.ravel(), norm='ortho')
+    
+    # Zero out values below threshold
+    dct_image[abs(dct_image) < factor] = 0
+    
+    # inverse DCT
+    idct_audio = sc.fftpack.idct(dct_image, norm='ortho').real
+    
+    # New file name
+    new_audio_path = path[0:-4] + '_' + str(fs) + '_DCT_' + str(factor) + '.wav'
+    return new_audio_path, np.asarray(idct_audio, dtype=np.int16)
+
 
 def ssa_compression(path,audio_image,factor,fs,percent = True, pc=None,v=None):
     '''
@@ -299,7 +320,7 @@ def atk_bst(audio_path,write_location,audio_files,raster_width,models,attack):
     # For ssa
     pc = v = None
 
-    # Maxiumu iterations
+    # Maximum iterations
     if(_attack_name == ssa_atk_name):
         max_allowed_iterations = 15
     if(_attack_name == fft_atk_name):
