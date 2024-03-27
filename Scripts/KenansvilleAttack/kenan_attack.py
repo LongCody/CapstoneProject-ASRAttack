@@ -34,6 +34,8 @@ import io
 import argparse
 import whisper
 import torch
+from pydub import AudioSegment
+
 
 # NOTE: Should we remove SSA or tell them how to get it?
 
@@ -74,6 +76,7 @@ svd_atk_name = 'svd'
 ssa_atk_name = 'ssa'
 pca_atk_name = 'pca'
 sin_atk_name = 'sin'
+overlay_atk_name = 'overlay'
 
 # Models 
 google_phone = 'google_phone'
@@ -206,6 +209,28 @@ def dct_compression(path, audio_image, factor, fs):
     new_audio_path = path[0:-4] + '_' + str(fs) + '_DCT_' + str(factor) + '.wav'
     return new_audio_path, np.asarray(idct_audio, dtype=np.int16)
 
+def overlay_compression(path, audio_image, factor, fs):
+    
+    '''
+    Overlay Attack
+    # path: path to audio file
+    # Audio_image: audio file as an np.array object
+    # factor: the intensity below which you want to zero out
+    # fs: sample rate
+    '''
+    
+    audio = AudioSegment.from_file("/mnt/c/Users/zstra/OneDrive/Documents/Cs 425/Official Capstone Project/CapstoneProject-ASRAttack/Audio Commands/WeatherSF.wav")
+    
+    audio_up = audio + 20 #Increase overlay audio 
+    
+    audio_seg = AudioSegment(data=audio_image.tobytes(), sample_width=audio_image.dtype.itemsize, frame_rate = fs, channels = 1) #Convert Audio Image to Audio Segment
+    combined_audio = audio_seg.overlay(audio_up) #Overlay original audio with another audio file
+    
+    
+    new_audio_path = path[0:-4]+'_'+str(fs)+'_Overlay_'+str(factor)+'.wav' #New File namme
+    return new_audio_path, np.asarray(combined_audio.get_array_of_samples(),dtype=np.int16)
+
+
 
 def ssa_compression(path,audio_image,factor,fs,percent = True, pc=None,v=None):
     '''
@@ -248,11 +273,18 @@ def perturb(og_audio_path,
 
     elif(atk_name == fft_atk_name):
         path, perturbed_frame= fft_compression(og_audio_path,frame,factor,fs)
+        
+        return path, perturbed_frame.ravel()
 
     elif (atk_name == dct_atk_name):  
         path, perturbed_frame = dct_compression(og_audio_path, frame, factor, fs)
 
-    return path, perturbed_frame.ravel()
+        return path, perturbed_frame.ravel()
+
+    elif (atk_name == overlay_atk_name):  
+        path, perturbed_frame = overlay_compression(og_audio_path, frame, factor, fs)
+        
+        return path, perturbed_frame.ravel()
 
 def bst_atk_factor(min_atk,max_atk,val_atk,atk_name,og_label,atk_label):
     '''
@@ -329,6 +361,8 @@ def atk_bst(audio_path,write_location,audio_files,raster_width,models,attack):
     if(_attack_name == fft_atk_name):
         max_allowed_iterations = 15
     if(_attack_name == dct_atk_name):
+        max_allowed_iterations = 15
+    if(_attack_name == overlay_atk_name):
         max_allowed_iterations = 15
 
     # Initialize iteration counter

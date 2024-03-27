@@ -9,7 +9,7 @@ from Raspberry_PI import run_speech_func
 import sys
 sys.path.append('/home/cjcclong/git/CapstoneProject-ASRAttack/Scripts/KenansvilleAttack')
 from KenansvilleAttack.kenan_attack import transcribe
-
+from Spec_process import preprocess_spec
 
 
 
@@ -44,6 +44,15 @@ class Test_Kenansville(unittest.TestCase):
     self.assertEqual(result, transcription)
 
 
+class Test_Spec_dir_creation(unittest.TestCase):
+  
+  def test_create_folder(self):
+    root_dir = "/mnt/c/Users/zstra/OneDrive/Documents/Cs 425/Official Capstone Project/CapstoneProject-ASRAttack/Audio Commands"
+    output_dir = "/mnt/c/Users/zstra/OneDrive/Documents/Cs 425/Official Capstone Project/CapstoneProject-ASRAttack/Audio Commands/spectrograms"
+    
+    preprocess_spec(root_dir, output_dir)
+    dir = "spectrogram"
+    self.assertTrue(os.path.exists(dir))
     
  
 
