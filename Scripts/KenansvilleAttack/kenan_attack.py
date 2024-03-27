@@ -249,6 +249,9 @@ def perturb(og_audio_path,
     elif(atk_name == fft_atk_name):
         path, perturbed_frame= fft_compression(og_audio_path,frame,factor,fs)
 
+    elif (atk_name == dct_atk_name):  
+        path, perturbed_frame = dct_compression(og_audio_path, frame, factor, fs)
+
     return path, perturbed_frame.ravel()
 
 def bst_atk_factor(min_atk,max_atk,val_atk,atk_name,og_label,atk_label):
