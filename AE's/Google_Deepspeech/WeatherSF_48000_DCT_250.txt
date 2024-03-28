@@ -1,0 +1,3 @@
+                Original Transcription: what is the weather like in San Francisco I'm planning a trip
+                Attack Transcription: what is the weather like in San Francisco in Chinese Express
+                MSE: 0.04696514946641766

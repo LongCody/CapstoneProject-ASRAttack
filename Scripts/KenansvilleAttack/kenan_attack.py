@@ -41,8 +41,8 @@ from pydub import AudioSegment
 
 #Parsing commandline input flags
 parser = argparse.ArgumentParser()
-parser.add_argument("-ifile", "--inputfile", help="/home/cjcclong/newnew/CapstoneProject-ASRAttack/Scripts/KenansvilleAttack/willthisswork.wav")
-parser.add_argument("-ofile","--outputfile",help="/home/cjcclong/git/CapstoneProject-ASRAttack/Scripts/output.wav")
+parser.add_argument("-ifile", "--inputfile", help="/mnt/c/Users/zstra/OneDrive/Documents/Cs 425/Official Capstone Project/CapstoneProject-ASRAttack/Audio Commands")
+parser.add_argument("-ofile","--outputfile",help="/mnt/c/Users/zstra/OneDrive/Documents/Cs 425/Official Capstone Project/CapstoneProject-ASRAttack/Scripts/KenansvilleAttack/output.wav")
 parser.add_argument("-a","--attack",help="fft")
 # parser.add_argument("","",help=)
 # parser.add_argument("","",help=)
@@ -97,7 +97,7 @@ def transcribe(my_path,model):
     with sr.AudioFile(my_path) as source:
         audio = r.record(source)  # read the entire audio file
     
-    if(model == google):
+    if(model == google or model == deepspeech):
         # Google
         try:
             return r.recognize_google(audio)
@@ -219,9 +219,9 @@ def overlay_compression(path, audio_image, factor, fs):
     # fs: sample rate
     '''
     
-    audio = AudioSegment.from_file("/mnt/c/Users/zstra/OneDrive/Documents/Cs 425/Official Capstone Project/CapstoneProject-ASRAttack/Audio Commands/WeatherSF.wav")
+    audio = AudioSegment.from_file("/mnt/c/Users/zstra/OneDrive/Documents/Cs 425/Official Capstone Project/CapstoneProject-ASRAttack/Audio Commands/lights.wav")
     
-    audio_up = audio + 20 #Increase overlay audio 
+    audio_up = audio + 10 #Increase overlay audio 
     
     audio_seg = AudioSegment(data=audio_image.tobytes(), sample_width=audio_image.dtype.itemsize, frame_rate = fs, channels = 1) #Convert Audio Image to Audio Segment
     combined_audio = audio_seg.overlay(audio_up) #Overlay original audio with another audio file
@@ -307,7 +307,7 @@ def bst_atk_factor(min_atk,max_atk,val_atk,atk_name,og_label,atk_label):
             min_atk = val_atk
             val_atk = np.abs(min_atk+max_atk)/2
             
-    elif(atk_name == pca_atk_name or atk_name == svd_atk_name or atk_name == ssa_atk_name):
+    elif(atk_name == overlay_atk_name or atk_name == svd_atk_name or atk_name == ssa_atk_name):
         if(succ):
             min_atk = val_atk
             val_atk = np.abs(min_atk+max_atk)/2

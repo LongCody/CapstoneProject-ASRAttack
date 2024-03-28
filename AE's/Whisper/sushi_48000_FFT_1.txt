@@ -1,0 +1,3 @@
+                Original Transcription:  I'm curious about Japanese cuisine. Could you suggest some sushi recipes?
+                Attack Transcription:  I'm curious about Japanese cuisine. Would you suggest some kimchi recipes?
+                MSE: 0.01994420731971414
