@@ -45,11 +45,11 @@ python kenan_attack.py --inputfile <audio_file_path> --outputfile <outputfile> -
 
 where:
 
-
-# GUI
-
 audio_file_path - full path to the audio file
 
 outputfile - full path to the outputfile or outfile name (if you want it in the same location as the input file)
 
 attack - fft, ssa, dct, or overlay
+
+
+# GUI
