@@ -24,7 +24,9 @@ Execute python script- python3 waav2vec2transcribe.py
 Install dependencies
 
 pip install deepspeech
+
 wget https://github.com/mozilla/DeepSpeech/releases/download/v0.9.3/deepspeech-0.9.3-models.pbmm
+
 wget https://github.com/mozilla/DeepSpeech/releases/download/v0.9.3/deepspeech-0.9.3-models.scorer
 
 python3 DeepspeechTranslation.py
@@ -42,6 +44,7 @@ Run the .py file using the following command:
 python kenan_attack.py --inputfile <audio_file_path> --outputfile <outputfile> --attack <attack_name>
 
 where:
+
 
 # GUI
 
