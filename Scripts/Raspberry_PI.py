@@ -15,9 +15,9 @@ def run_speech_func():
     signal.signal(signal.SIGALRM, handler)
     signal.alarm(15)
 
-    ae = ['/home/tnilab/Capstone project/asrattack/CapstoneProject-ASRAttack/Scripts/synthesize1_24000_FFT_1434637_BST.wav',
-          '/home/tnilab/Capstone project/asrattack/CapstoneProject-ASRAttack/Scripts/synthesize2_24000_FFT_2511508_BST.wav',
-          '/home/tnilab/Capstone project/asrattack/CapstoneProject-ASRAttack/Scripts/record_out_48000_FFT_1950767_BST.wav']
+    ae = ['/mnt/c/Users/zstra/OneDrive/Documents/Cs 425/Official Capstone Project/CapstoneProject-ASRAttack/AEs/Google_Deepspeech_Amazon/Alarm_48000_Overlay_93_BST.wav',
+          '/mnt/c/Users/zstra/OneDrive/Documents/Cs 425/Official Capstone Project/CapstoneProject-ASRAttack/AEs/Google_Deepspeech_Amazon/text_48000_Overlay_50.0_BST.wav',
+          '/mnt/c/Users/zstra/OneDrive/Documents/Cs 425/Official Capstone Project/CapstoneProject-ASRAttack/AEs/Whisper/Directions_48000_Overlay_50.0_BST.wav']
 
     mixer.init() #Initialzing pyamge mixer
     
