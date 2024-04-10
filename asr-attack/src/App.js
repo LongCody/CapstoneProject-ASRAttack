@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import NavBar from './NavBar';
 import Home from './pages/Home';
 import Videos from './pages/Videos';
-import Try from './pages/Explore';
+import Explore from './pages/Explore';
 import About from './pages/About';  
 import Amazon from './pages/Amazon';
 import Google from './pages/Google';
@@ -20,7 +20,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/videos" element={<Videos />} />
-                    <Route path="/Explore" element={<Try />} />
+                    <Route path="/Explore" element={<Explore />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/amazon" element={<Amazon />} />
                     <Route path="/google" element={<Google />} />
