@@ -1,3 +1,0 @@
-                Original Transcription:  I'm interested in baking could you pull up some recipes for chocolate cake?
-                Attack Transcription:  I'm interested what is the weather like in San Francisco.
-                MSE: 0.04399302856310677

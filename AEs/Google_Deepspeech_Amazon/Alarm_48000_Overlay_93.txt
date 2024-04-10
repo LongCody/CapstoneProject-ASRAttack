@@ -1,4 +1,0 @@
-
-                Original Transcription: can you set an alarm tomorrow for 6:00 in the morning
-                Attack Transcription: I'm interested in baking could you pull up for 6:00 in the morning
-                MSE: 0.012514234303109006

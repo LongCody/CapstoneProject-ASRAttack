@@ -1,3 +1,0 @@
-                Original Transcription:  I'm heading to the University of Nevada, Reno. Can you give me directions and estimate how long it will take to get there?
-                Attack Transcription:  I'm heading to the University of Miami-Dade. Can you give me directions on the estimates for any of the districts you prefer?
-                MSE: 0.03541786119546995
