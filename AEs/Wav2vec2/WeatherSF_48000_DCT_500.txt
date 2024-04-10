@@ -1,0 +1,3 @@
+                Original Transcription: WHAT IS THE WEATHER LIKE IN SAN FRANCISCO IAM PLANNING A TRIP
+                Attack Transcription: WHAT IS THE WEATHER WIFE AN SAN FRANCISCO AND PLANTING A TRIP
+                MSE: 0.02748742123966161

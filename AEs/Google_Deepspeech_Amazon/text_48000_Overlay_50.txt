@@ -1,0 +1,3 @@
+                Original Transcription: I need to send a text message to John can you text him I completed my part of the project
+                Attack Transcription: I'm curious I need you to send a text message to John could you have my part of the project
+                MSE: 0.03485027473552998

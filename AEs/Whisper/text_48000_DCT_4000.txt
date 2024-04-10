@@ -1,0 +1,3 @@
+                Original Transcription:  I need to send a text message to John. Can you text him? I completed my part of the project.
+                Attack Transcription:  I need to send a text message to John. He texted them and completed my part of the project.
+                MSE: 0.016768941230603882
