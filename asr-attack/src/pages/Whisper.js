@@ -17,7 +17,7 @@ import wav32 from "./AEs/Whisper/Baking_DCT/Attack/Baking_48000_DCT_1000_BST.wav
 import wav41 from "./AEs/Whisper/Audiobook_SSA/Original/Audiobook.wav";
 import wav42 from "./AEs/Whisper/Audiobook_SSA/Attack/Audiobook_SSA_540_BST.wav";
 
-export default function Amazon() {
+export default function Whisper() {
 
     const [selectedOption, setSelectedOption] = useState('');
     const [fileList, setFileList] = useState({
