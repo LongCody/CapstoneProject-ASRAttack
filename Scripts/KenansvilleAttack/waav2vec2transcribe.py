@@ -1,13 +1,11 @@
 import torch
 from transformers import Wav2Vec2ForCTC, Wav2Vec2Processor
-from datasets import load_dataset
 import soundfile as sf
-
-ds = load_dataset("patrickvonplaten/librispeech_asr_dummy", "clean", split="validation")
+from jiwer import wer
 
 # Load your audio file (replace 'your_audio.wav' with the actual file path)
-audio_file = ds[0]
-data, samplerate = sf.read(audio_file)
+input_file = "/mnt/c/Users/zstra/OneDrive/Documents/Cs 425/Official Capstone Project/CapstoneProject-ASRAttack/AEs/Google_Deepspeech_Amazon/lib1_16000_Overlay_50.0_BST.wav"
+data, samplerate = sf.read(input_file)
 
 # Initialize the processor
 processor = Wav2Vec2Processor.from_pretrained("facebook/wav2vec2-base-960h")
@@ -25,3 +23,11 @@ with torch.no_grad():
     transcription = processor.batch_decode(predicted_ids)
 
 print("Transcription:", transcription)
+
+
+expected_text = "he also thought of his managerial position"
+transcribed_text = " ".join(transcription)
+
+# Word Error Rate (WER)
+word_er = wer(expected_text.lower(), transcribed_text.lower())
+print("WER:", word_er)

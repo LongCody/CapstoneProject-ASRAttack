@@ -1,11 +1,12 @@
 #Team 04 - Kristian Konstantinov, Cody Long, Zachary Strazi, Jacob Ayers for the University of Nevada, Reno
 
 import whisper
+from jiwer import wer
 
 #Add Feature: Input system arguement to for file name to transcribe and target .txt file transcription name
 #Use this space to add feature
 def transcription():
-    input_file = "/mnt/c/Users/zstra/OneDrive/Documents/Cs 425/PROJECT RESOURCES/Project test/AE/song/record_out_48000_FFT_3901535_BST.wav"
+    input_file = "/mnt/c/Users/zstra/OneDrive/Documents/Cs 425/Official Capstone Project/CapstoneProject-ASRAttack/Audio Commands/lib5.wav"
     output_file = "output.txt" #name of file being created of transcription
     #add expected_audio_output transcription file
 
@@ -15,6 +16,7 @@ def transcription():
     text_transcription = transcription["text"] #saves the text transcription as a readable string
     #compare if the transcription matches the expected output
 
+    expected_text = "how about that now? his pain at her failure to meet or write him rapidly increased as he devoted himself to the subject." 
     #print(text_transcription) #print to test out speech to text functionality
 
     with open(output_file, "w") as output: #Write transcription into the predesignated output file name
@@ -23,6 +25,8 @@ def transcription():
 
 
     print(text_transcription)
+    word_er = wer(expected_text.lower(), text_transcription.lower())
+    print("WER: ",  word_er)
 
 if __name__ == "__main__":
     transcription()
