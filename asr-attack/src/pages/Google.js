@@ -17,7 +17,8 @@ import wav31 from "./AEs/Google/weathersf_dct/Original/weathersf_dct.wav";
 import wav32 from "./AEs/Google/weathersf_dct/Attack/weathersf_dct.wav";
 import wav41 from "./AEs/Google/audiobook_ssa/Original/audiobook_ssa.wav";
 import wav42 from "./AEs/Google/audiobook_ssa/Attack/audiobook_ssa.wav";
-export default function Amazon() {
+
+export default function Google() {
 
     const [selectedOption, setSelectedOption] = useState('');
     const [fileList, setFileList] = useState({
