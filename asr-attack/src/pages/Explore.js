@@ -1,7 +1,7 @@
 import { Box, Typography, Button, Paper} from '@mui/material';
 import { Link } from 'react-router-dom';
 
-export default function Try() {
+export default function Explore() {
 
     return (
         <Box sx={{ maxWidth: 'auto', margin: 'auto', padding: 4 }}>
