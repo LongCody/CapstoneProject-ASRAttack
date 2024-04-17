@@ -1,0 +1,3 @@
+Original Transcription:  He saw that in the excitement of recent events, he had not formulated a plan upon that score.
+Attack Transcription:  We saw that in the excitement of recent events, we had not formulated a plan upon that score.
+MSE: 0.01757258839825981

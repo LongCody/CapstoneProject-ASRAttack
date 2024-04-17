@@ -1,0 +1,3 @@
+Original Transcription:  No letter had come, no word of any kind, and yet here it was late in the evening, and she had agreed to meet him that morning.
+Attack Transcription:  No letter has come, no word of any kind, and yet here it was, late in the evening, and she had agreed to meet him at morning. 
+MSE: 0.036273422930667334

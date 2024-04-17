@@ -1,0 +1,3 @@
+Original Transcription:  Any answer? I guess not.
+Attack Transcription:  Any answer? I don't know.
+MSE: 0.03204281834086448
