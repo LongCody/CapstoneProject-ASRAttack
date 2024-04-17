@@ -99,7 +99,7 @@ export default function Amazon() {
                             <MenuItem value="Audiobook SSA">Audiobook SSA</MenuItem>
                             <MenuItem value="Directions FFT">Directions FFT</MenuItem>
                             <MenuItem value="Sushi Overlay">Sushi Overlay</MenuItem>
-                            <MenuItem value="Weather DC">Weather DC</MenuItem>
+                            <MenuItem value="Weather DCT">Weather DCT</MenuItem>
                         </Select>
                     </FormControl>
                     {selectedOption && (
