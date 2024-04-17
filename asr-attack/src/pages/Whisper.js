@@ -25,7 +25,7 @@ export default function Amazon() {
             pngFiles: [image1, image12],
             wavFiles: [wav1, wav12],
             txtFile: <Typography variant="body1" gutterBottom>                
-            <b>Original Transcription:</b>  I'm heading to the University of Nevada, Reno. Can you give me directions and estimate how long it will take to get there?,<br />
+            <b>Original Transcription:</b>  I'm heading to the University of Nevada, Reno. Can you give me directions and estimate how long it will take to get there?<br />
             <b>Attack Transcription:</b>  I'm heading to the University of Miami-Dade. Can you give me directions on the estimates for any of the districts you prefer?<br />
             <b>MSE:</b> 0.03541786119546995<br />
             </Typography>
