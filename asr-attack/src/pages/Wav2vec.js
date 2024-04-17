@@ -1,22 +1,22 @@
 import { Box, Typography, Button, Paper, FormControl, InputLabel, Select, MenuItem, Grid } from '@mui/material';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import image11 from "./AEs/Wav2Vec2/directions_FFT/Original/directions.png";
-import image12 from "./AEs/Wav2Vec2/directions_FFT/Attack/directions.png";
-import image21 from "./AEs/Wav2Vec2/audio4_ssa/Original/audio4.png";
-import image22 from "./AEs/Wav2Vec2/audio4_ssa/Attack/audio4.png";
-import image31 from "./AEs/Wav2Vec2/weathersf_dct/Original/weathersf_dct.png";
-import image32 from "./AEs/Wav2Vec2/weathersf_dct/Attack/weathersf_dct.png";
-import image41 from "./AEs/Wav2Vec2/sushi_overlay/Original/sushi.png";
-import image42 from "./AEs/Wav2Vec2/sushi_overlay/Attack/sushi.png";
-import wav11 from "./AEs/Wav2Vec2/directions_FFT/Original/directions.wav";
-import wav12 from "./AEs/Wav2Vec2/directions_FFT/Attack/directions.wav";
-import wav21 from "./AEs/Wav2Vec2/audio4_ssa/Original/audio4.wav";
-import wav22 from "./AEs/Wav2Vec2/audio4_ssa/Attack/audio4.wav";
-import wav31 from "./AEs/Wav2Vec2/weathersf_dct/Original/weathersf_dct.wav";
-import wav32 from "./AEs/Wav2Vec2/weathersf_dct/Attack/weathersf_dct.wav";
-import wav41 from "./AEs/Wav2Vec2/sushi_overlay/Original/sushi.wav";
-import wav42 from "./AEs/Wav2Vec2/sushi_overlay/Attack/Asushi.wav";
+import image11 from "./AEs/Wav2vec2/directions_fft/Original/directions.png";
+import image12 from "./AEs/Wav2vec2/directions_fft/Attack/directions.png";
+import image21 from "./AEs/Wav2vec2/audio4_ssa/Original/audio4.png";
+import image22 from "./AEs/Wav2vec2/audio4_ssa/Attack/audio4.png";
+import image31 from "./AEs/Wav2vec2/weathersf_dct/Original/weathersf.png";
+import image32 from "./AEs/Wav2vec2/weathersf_dct/Attack/weathersf.png";
+import image41 from "./AEs/Wav2vec2/sushi_overlay/Original/sushi.png";
+import image42 from "./AEs/Wav2vec2/sushi_overlay/Attack/sushi.png";
+import wav11 from "./AEs/Wav2vec2/directions_fft/Original/directions.wav";
+import wav12 from "./AEs/Wav2vec2/directions_fft/Attack/directions.wav";
+import wav21 from "./AEs/Wav2vec2/audio4_ssa/Original/audio4.wav";
+import wav22 from "./AEs/Wav2vec2/audio4_ssa/Attack/audio4.wav";
+import wav31 from "./AEs/Wav2vec2/weathersf_dct/Original/weathersf.wav";
+import wav32 from "./AEs/Wav2vec2/weathersf_dct/Attack/weathersf.wav";
+import wav41 from "./AEs/Wav2vec2/sushi_overlay/Original/sushi.wav";
+import wav42 from "./AEs/Wav2vec2/sushi_overlay/Attack/sushi.wav";
 
 export default function Wav2vec2() {
 
@@ -84,7 +84,7 @@ export default function Wav2vec2() {
                 <Paper sx={{ display: 'flex', justifyContent: 'space-between', gap: '10px', padding: 2, backgroundColor: '#f5f5f5', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.3)'}}>
                     <Button variant="contained" component={Link} to="/amazon" sx={{ flex: 1, textAlign: 'center' }}>Amazon</Button>
                     <Button variant="contained" component={Link} to="/google" sx={{ flex: 1, textAlign: 'center' }}>Google</Button>
-                    <Button variant="contained" component={Link} to="/wav2vec" sx={{ flex: 1, textAlign: 'center' }}>Wav2vec2</Button>
+                    <Button variant="contained" component={Link} to="/wav2vec" sx={{ flex: 1, textAlign: 'center' }}>Wav2Vec2</Button>
                     <Button variant="contained" component={Link} to="/whisper" sx={{ flex: 1, textAlign: 'center' }}>Whisper</Button>
                 </Paper>
                 <br />
