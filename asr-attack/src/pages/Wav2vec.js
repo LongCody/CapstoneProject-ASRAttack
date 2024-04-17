@@ -18,7 +18,7 @@ import wav32 from "./AEs/Wav2Vec2/weathersf_dct/Attack/weathersf_dct.wav";
 import wav41 from "./AEs/Wav2Vec2/sushi_overlay/Original/sushi.wav";
 import wav42 from "./AEs/Wav2Vec2/sushi_overlay/Attack/Asushi.wav";
 
-export default function Amazon() {
+export default function Wav2vec2() {
 
     const [selectedOption, setSelectedOption] = useState('');
     const [fileList, setFileList] = useState({
