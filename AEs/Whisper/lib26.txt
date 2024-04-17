@@ -1,0 +1,4 @@
+Iteration #: 1
+                Original Transcription:  To carry, the sound of the little bells upon the horse-cars, as they tingled in and out of hearing, was as pleasing as it was novel.
+                Attack Transcription:  To Carrie, the sound of the little bells upon the horse cars, as they tingled in and out of hearing, was as pleasing as it was novel.
+                MSE: 0.02914307272081281

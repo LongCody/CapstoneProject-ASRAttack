@@ -35,6 +35,7 @@ import argparse
 import whisper
 import torch
 from pydub import AudioSegment
+from jiwer import wer
 
 
 # NOTE: Should we remove SSA or tell them how to get it?
@@ -43,7 +44,7 @@ from pydub import AudioSegment
 parser = argparse.ArgumentParser()
 parser.add_argument("-ifile", "--inputfile", help="/mnt/c/Users/zstra/OneDrive/Documents/Cs 425/Official Capstone Project/CapstoneProject-ASRAttack/Audio Commands")
 parser.add_argument("-ofile","--outputfile",help="/mnt/c/Users/zstra/OneDrive/Documents/Cs 425/Official Capstone Project/CapstoneProject-ASRAttack/Scripts/KenansvilleAttack/output.wav")
-parser.add_argument("-a","--attack",help="fft")
+parser.add_argument("-a","--attack",help="overlay")
 # parser.add_argument("","",help=)
 # parser.add_argument("","",help=)
 
@@ -106,7 +107,7 @@ def transcribe(my_path,model):
         except sr.RequestError as e:
            print("Google error; {0}".format(e))
            
-    #Contribution of team
+    #Contribution of team_____________________________________________________________________________________________________________________
     if model == whisper_medium:
         whisp = whisper.load_model("medium.en")
         # Convert AudioData to NumPy array
@@ -188,6 +189,7 @@ def fft_compression(path,audio_image,factor,fs):
     new_audio_path = path[0:-4]+'_'+str(fs)+'_FFT_'+str(factor)+'.wav'
     return new_audio_path, np.asarray(ifft_audio,dtype=np.int16)
 
+#Contribution of team_____________________________________________________________________________________________________________________
 def dct_compression(path, audio_image, factor, fs):
     '''
     DCT Attack
@@ -219,9 +221,9 @@ def overlay_compression(path, audio_image, factor, fs):
     # fs: sample rate
     '''
     
-    audio = AudioSegment.from_file("/mnt/c/Users/zstra/OneDrive/Documents/Cs 425/Official Capstone Project/CapstoneProject-ASRAttack/Audio Commands/lights.wav")
+    audio = AudioSegment.from_file("/mnt/c/Users/zstra/OneDrive/Documents/Cs 425/Official Capstone Project/CapstoneProject-ASRAttack/Audio Commands/lib25.wav")
     
-    audio_up = audio + 10 #Increase overlay audio 
+    audio_up = audio #Increase overlay audio 
     
     audio_seg = AudioSegment(data=audio_image.tobytes(), sample_width=audio_image.dtype.itemsize, frame_rate = fs, channels = 1) #Convert Audio Image to Audio Segment
     combined_audio = audio_seg.overlay(audio_up) #Overlay original audio with another audio file
@@ -230,7 +232,7 @@ def overlay_compression(path, audio_image, factor, fs):
     new_audio_path = path[0:-4]+'_'+str(fs)+'_Overlay_'+str(factor)+'.wav' #New File namme
     return new_audio_path, np.asarray(combined_audio.get_array_of_samples(),dtype=np.int16)
 
-
+#_________________________________________________________________________________________________________________________________________________________
 
 def ssa_compression(path,audio_image,factor,fs,percent = True, pc=None,v=None):
     '''
@@ -330,6 +332,7 @@ def atk_bst(audio_path,write_location,audio_files,raster_width,models,attack):
     og_audio_path = audio_path
 
     og_label = transcribe(og_audio_path,_model)
+    
 
     # Read file to attack
     fs, data = scipy.io.wavfile.read(og_audio_path)
@@ -363,7 +366,7 @@ def atk_bst(audio_path,write_location,audio_files,raster_width,models,attack):
     if(_attack_name == dct_atk_name):
         max_allowed_iterations = 15
     if(_attack_name == overlay_atk_name):
-        max_allowed_iterations = 15
+        max_allowed_iterations = 1
 
     # Initialize iteration counter
     itr = 0
@@ -429,10 +432,13 @@ def atk_bst(audio_path,write_location,audio_files,raster_width,models,attack):
         avg = diff_avg(data,perturbed_audio)
         if transcribed_perturbation is None:
             transcribed_perturbation = 'None'
+            
+        
         print('Iteration #: ' + str(itr+1))
         print('\t'*2 + 'Original Transcription: ' + og_label)
         print('\t'*2 + 'Attack Transcription: ' + transcribed_perturbation)
         print('\t'*2 + 'MSE: ' + str(avg))
+        
 
 
         itr = itr + 1

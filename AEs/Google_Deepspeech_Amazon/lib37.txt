@@ -1,0 +1,4 @@
+Iteration #: 1
+                Original Transcription: many began to explain but her husband took this part of the conversation to himself
+                Attack Transcription: was
+                MSE: 0.0513376949115058

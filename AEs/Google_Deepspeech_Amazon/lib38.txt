@@ -1,0 +1,4 @@
+Iteration #: 1
+                Original Transcription: you could get home easy too it isn't very far
+                Attack Transcription: you can get home for Rosemary Apartments
+                MSE: 0.05452619469935664

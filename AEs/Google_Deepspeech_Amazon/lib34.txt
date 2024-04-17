@@ -1,0 +1,4 @@
+Iteration #: 1
+                Original Transcription: one could see that he was very much wrapped up in his offspring
+                Attack Transcription: None
+                MSE: 0.061823936144687966

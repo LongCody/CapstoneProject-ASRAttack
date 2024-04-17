@@ -1,0 +1,4 @@
+Iteration #: 1
+                Original Transcription: the helpless manager Pace the floor and grimly endured the Gloom of defeat
+                Attack Transcription: None
+                MSE: 0.038764160163537474S

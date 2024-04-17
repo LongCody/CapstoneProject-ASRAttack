@@ -1,0 +1,4 @@
+Iteration #: 1
+                Original Transcription:  Dear sir, we beg to inform you that we are instructed to wait until tomorrow, Thursday, at one o'clock, before filing suit against you, on behalf of Mrs. Julia Hurstwood, for divorce and alimony.
+                Attack Transcription:  In about an hour and three quarters the boy returned. We beg to inform you that we are instructed to wait until tomorrow, Thursday, at one o'clock, before filing suit against you, on behalf of Mrs. Julia Hurstwood, for divorce and alimony.
+                MSE: 0.026726527004770045

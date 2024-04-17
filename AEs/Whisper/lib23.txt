@@ -1,0 +1,4 @@
+Iteration #: 1
+                Original Transcription:  So here it was spread out clear before him and now he knew what to expect.
+                Attack Transcription:  So here it was, spread out clear before he returned, and now he knew what to expect.
+                MSE: 0.03857594956128563

@@ -1,0 +1,4 @@
+Iteration #: 1
+                Original Transcription:  He was of a clean saving disposition and had already paid a number of monthly installments on two lots far out on the west side.
+                Attack Transcription:  He was of a clean, saving floor, resident apartment and had already paid a number of monthly installments on two lots far out on the west side.
+                MSE: 0.044385503854287474

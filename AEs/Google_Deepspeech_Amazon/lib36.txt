@@ -1,0 +1,4 @@
+Iteration #: 1
+                Original Transcription: he seemed to be thinking of something else
+                Attack Transcription: can you sing Happy song as the one floor
+                MSE: 0.07085638175468915

@@ -1,0 +1,4 @@
+Iteration #: 1
+                Original Transcription: hurstwood walked the floor mentally arranging the chief points of his situation
+                Attack Transcription: set an alarm for 10:45
+                MSE: 0.043259796451211426

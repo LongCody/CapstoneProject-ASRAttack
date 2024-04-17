@@ -1,0 +1,4 @@
+Iteration #: 1
+                Original Transcription: he also thought of his managerial position
+                Attack Transcription: None
+                MSE: 0.06133711039854842

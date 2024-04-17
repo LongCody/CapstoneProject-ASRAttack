@@ -1,0 +1,4 @@
+Iteration #: 1
+                Original Transcription: IT SEEMED AS IF HIS FAMILY TROUBLES WERE JUST BEGINNING
+                Attack Transcription: IT SEEMED AN ABOUT AN HOURE IN TROUBLE ORDER JUST BOYD ENTURNED
+                MSE: 0.05993493721589475

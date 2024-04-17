@@ -1,0 +1,4 @@
+Iteration #: 1
+                Original Transcription: IT WAS THE WORST SUNDAY HE HAD SPENT IN HIS LIFE
+                Attack Transcription: IT WAS IN ABOUT AN HOUR WHEN E REORDERED AND HE BOY REJOINED
+                MSE: 0.05451628904210557

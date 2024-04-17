@@ -1,0 +1,5 @@
+
+Iteration #: 1
+                Original Transcription: hey fancy does he sat at his desk that nothing would be done for a week or two meanwhile he would have time to think
+                Attack Transcription: he would have time to think
+                MSE: 0.03703509719791196

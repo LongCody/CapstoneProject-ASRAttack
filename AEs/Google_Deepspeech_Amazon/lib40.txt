@@ -1,0 +1,4 @@
+Iteration #: 1
+                Original Transcription: she wanted to make some reference to their relations upon the train but was too timid
+                Attack Transcription: None
+                MSE: 0.05288931118123963

@@ -1,0 +1,4 @@
+Iteration #: 1
+                Original Transcription:  To him, the presence or absence of his wife's sister was a matter of indifference.
+                Attack Transcription:  To him, the presence or absence of his wife's sister was a matter of indifference.
+                MSE: 0.04547219598392182

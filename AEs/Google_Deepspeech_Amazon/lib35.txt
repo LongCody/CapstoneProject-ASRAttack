@@ -1,0 +1,4 @@
+Iteration #: 1
+                Original Transcription: now now he said walking there there and there was a certain Swedish accent noticeable in his voice
+                Attack Transcription: None
+                MSE: 0.0469352978547427

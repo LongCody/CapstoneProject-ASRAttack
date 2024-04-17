@@ -1,0 +1,4 @@
+Iteration #: 1
+                Original Transcription:  His ambition was someday to build a house on them.
+                Attack Transcription:  his ambition as the one floor house on them.
+                MSE: 0.05505181452759372

@@ -1,0 +1,4 @@
+Iteration #: 1
+                Original Transcription:  very truly yours, etc. Compromise!
+                Attack Transcription:  Very truly yours. In about an hour and three quarters, the boy returned. Compromise!
+                MSE: 0.04720352041691699

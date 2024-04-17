@@ -1,0 +1,4 @@
+Iteration #: 1
+                Original Transcription: he decided to write her care of the Westside post office and ask for an explanation as well as to have her meet him
+                Attack Transcription: post office and ask for an explanation as well as to have her meet him
+                MSE: 0.019432360170815843

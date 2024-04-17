@@ -1,0 +1,4 @@
+Iteration #: 1
+                Original Transcription: in about an hour and 3/4 the boy returned
+                Attack Transcription: in about an hour and 3/4 the boy returned
+                MSE: 0.013626481496750156

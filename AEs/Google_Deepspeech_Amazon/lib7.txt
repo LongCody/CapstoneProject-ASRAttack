@@ -1,0 +1,4 @@
+Iteration #: 1
+                Original Transcription: 3:00 came for 5:06 and no letter
+                Attack Transcription: in about 3:45 6 and no letter
+                MSE: 0.03455151122285301

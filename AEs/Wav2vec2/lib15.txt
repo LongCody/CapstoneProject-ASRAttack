@@ -1,0 +1,4 @@
+Iteration #: 1
+                Original Transcription: HE WOULD GO TO HER AND TELL HER ALL HIS FAMILY COMPLICATIONS
+                Attack Transcription: HE WOULD GO TOBOUT AN HOUR WITH HERARD ALL THEVOID ANLY COMPLICATIONS
+                MSE: 0.050395287322335475
