@@ -19,7 +19,7 @@ export default function About() {
                     </Typography>
                     <Typography variant="h5" gutterBottom>Advisor</Typography>
                     <Typography variant="body1" paragraph>
-                        Dr. Rui Hu - Assistant Professor in the Department of Computer Science & Engineering at the University of Nevada, Reno
+                        Dr. Rui Hu - Assistant Professor in the Department of Computer Science & Engineering at the University of Nevada, Reno <br />
                         Chase Carthen - Research Data Architect
                     </Typography>
                     <Typography variant="h5" gutterBottom>Group Members</Typography>
