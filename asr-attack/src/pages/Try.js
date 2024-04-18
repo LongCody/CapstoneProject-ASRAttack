@@ -1,6 +1,10 @@
 import { Box, Typography, Paper, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 
+function loadRPI(){
+    window.indexBridge.loadRPI();
+}
+
 export default function Try() {
     return (
         <Box sx={{ maxWidth: 'auto', margin: 'auto', padding: 4 }}>
