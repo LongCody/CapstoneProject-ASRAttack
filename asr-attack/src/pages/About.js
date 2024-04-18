@@ -31,7 +31,7 @@ export default function About() {
                 <Paper sx={{ padding: 2, backgroundColor: '#f5f5f5', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.3)'}}>
                     <Typography variant="h4" gutterBottom>Main Goals and Objectives</Typography>
                     <Typography variant="body1" paragraph>
-                        UPDATE THIS TEXT
+                        Many devices today rely on Automatic Speech Recognition (ASR) to identify keywords and phrases that trigger their functionality. Our project aim is to create Adversarial Examples (AE) that can be created by using methods of perturbing audio and then concurrently playing them while an auditory command that is given to ASR devices and cause them to misclassify the given command. First we attacked the Wav2Vec2 model, as well as the Whisper model to determine how efficient the AE’s are at causing a misclassification. We then tested our AE’s on APIs like Google, Amazon and DeepSpeech to cause a misclassification in a given command. To deliver the attacks, we used a Raspberry Pi device to listen for the trigger phrase and play the AE at the same time a user gives a command. The ASR device will then receive the user input as well as the AE simultaneously and misclassify the command.
                     </Typography>
                     <Typography variant="h4" gutterBottom>Intended Audience</Typography>
                     <Typography variant="body1" paragraph>
