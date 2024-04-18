@@ -2,6 +2,7 @@ const path = require('path');
 
 const { app, BrowserWindow } = require('electron');
 const isDev = require('electron-is-dev');
+const { contextBridge, ipcMain, ipcRenderer, shell, dialog } = require('electron');
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -11,7 +12,9 @@ function createWindow() {
     icon: __dirname + '/media/icon.png',
     title: "ASR Attack",
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      //contextIsolation: true,
+      preload: path.join(__dirname, "./preload.js"),
     }
   });
 
@@ -38,4 +41,8 @@ app.on('activate', () => {
   if (BrowserWindow.getAllWindows().length === 0) {
     createWindow();
   }
+});
+
+ipcMain.handle("loadRpi", () => {
+  shell.openExternal("file://windows/explorer.exe"); //test code to see if button call event works:: remove and insert full code when working
 });
