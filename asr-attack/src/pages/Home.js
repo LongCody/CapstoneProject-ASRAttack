@@ -51,9 +51,25 @@ export default function Home() {
                         <b>Spectrogram of Attack Transcription</b>
                     </Typography>
                 </Paper>
-                    <br />
-                    <Button variant="contained" component={Link} to="/explore" sx={{ marginRight: 2 }}>Explore</Button>
-                    <Button variant="outlined" component={Link} to="/about">Learn More</Button>
+                <br />
+                <Paper sx={{ padding: 2, backgroundColor: '#f5f5f5', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.3)'}}>
+                    <Typography variant="h4" gutterBottom>What types of attacks are there?</Typography>
+                    <Typography variant="body1" paragraph>
+                        <b>FFT (Fast Fourier Transformation): </b>This is an algorithm that calculates the DFT (Discrete Fourier Transformation) of a series. Any signal can be represented by a series of sine functions that add up to the original signal. The DFT is used to extract frequency information about audio in any ASR (Automatic Speech Recognition) System. Allows a vector of attack where certain frequency ranges can be downplayed that would be less perceivable to people while causing misclassifications for ASR systems.
+                    </Typography>
+                    <Typography variant="body1" paragraph>
+                        <b>SSA (Single Spectrum Analysis): </b>This is an algorithm that deconstructs a time series into a few smaller subsets of components that represent various trends and noise that can be summed back into the original data or certain subsets can be isolated or removed from the time series including the noise. Lowering the intensity of frequencies less perceptible to the human ear can allow for misclassifications by ASR systems while the overall audio is still perceivable to people.
+                    </Typography>
+                    <Typography variant="body1" paragraph>
+                        <b>DCT (Discrete Cosine Transformation): </b>This is an algorithm for compression where low energy parts can be discarded. Maintaining the coefficients that sum to the most significant part of the signal's energy. Maintaining these parts makes the original audio still perceivable, while more noisy, but requires less overall information. In our case the intensity of these low energy parts can be manipulated in order to generate a misclassification in ASR system while being perceivable to people.
+                    </Typography>
+                    <Typography variant="body1" paragraph>
+                        <b>Overlay: </b>This is a method of attack consisting of combining two different sources of audio on top of each other in order to produce a misclassification by ASR systems.
+                    </Typography>
+                </Paper>
+                <br />
+                <Button variant="contained" component={Link} to="/explore" sx={{ marginRight: 2 }}>Explore</Button>
+                <Button variant="outlined" component={Link} to="/about">Learn More</Button>
             </Paper>
         </Box>
     );
