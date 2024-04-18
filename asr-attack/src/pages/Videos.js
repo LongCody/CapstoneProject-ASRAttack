@@ -14,7 +14,7 @@ export default function Videos() {
                 </Paper>
                 <br />
                 <Paper sx={{ padding: 2, backgroundColor: '#f5f5f5' }}>
-                    <Typography variant="h4" gutterBottom sx={{ textAlign: 'center' }}>Trigger Words</Typography>
+                    <Typography variant="h4" gutterBottom sx={{ textAlign: 'center' }}>Video 1</Typography>
                     <Box sx={{ display: 'flex', justifyContent: 'center' }}>
                         <video src={video1} width="600" height="300" controls />
                     </Box>
