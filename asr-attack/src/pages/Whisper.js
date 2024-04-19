@@ -9,7 +9,7 @@ import image31 from "./AEs/Whisper/Baking_DCT/Original/Baking.png";
 import image32 from "./AEs/Whisper/Baking_DCT/Attack/Baking_48000_DCT_1000_BST.png";
 import image41 from "./AEs/Whisper/Audiobook_SSA/Original/Audiobook.png";
 import image42 from "./AEs/Whisper/Audiobook_SSA/Attack/Audiobook_SSA_540_BST.png";
-import wav1 from "./AEs/Whisper/Directions_FFT/Original/Directions.wav";
+import wav1 from "./AEs/Whisper/Directions_Overlay/Original/Directions.wav";
 import wav12 from "./AEs/Whisper/Directions_FFT/Attack/Directions_48000_FFT_6682935_BST.wav";
 import wav22 from "./AEs/Whisper/Directions_Overlay/Attack/Directions_48000_Overlay_50.0_BST.wav";
 import wav31 from "./AEs/Whisper/Baking_DCT/Original/Baking.wav";
