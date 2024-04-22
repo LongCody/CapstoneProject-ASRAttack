@@ -4,7 +4,8 @@ import soundfile as sf
 from jiwer import wer
 
 # Load your audio file (replace 'your_audio.wav' with the actual file path)
-input_file = "/mnt/c/Users/zstra/OneDrive/Documents/Cs 425/Official Capstone Project/CapstoneProject-ASRAttack/AEs/Google_Deepspeech_Amazon/lib1_16000_Overlay_50.0_BST.wav"
+#input_file = "/mnt/c/Users/zstra/OneDrive/Documents/Cs 425/Official Capstone Project/CapstoneProject-ASRAttack/Audio Commands/lib60.wav"
+input_file = "/mnt/c/Users/zstra/OneDrive/Documents/Cs 425/Official Capstone Project/CapstoneProject-ASRAttack/AEs/Whisper/lib60_16000_Overlay_50.0_BST.wav"
 data, samplerate = sf.read(input_file)
 
 # Initialize the processor
@@ -25,7 +26,7 @@ with torch.no_grad():
 print("Transcription:", transcription)
 
 
-expected_text = "he also thought of his managerial position"
+expected_text = "THIS CHANGE CAME ABOUT FROM AN ADVENTURE WE HAD TOGETHER"
 transcribed_text = " ".join(transcription)
 
 # Word Error Rate (WER)

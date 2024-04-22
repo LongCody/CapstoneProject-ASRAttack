@@ -1,4 +1,4 @@
 Iteration #: 1
-                Original Transcription:  If he didn't go and see them, they would sue him promptly.
+                Original Transcription:  If he didn't go and see them they would sue him promptly.
                 Attack Transcription:  If he didn't go and see them, they would sue him promptly.
                 MSE: 0.05510134924399075

@@ -1,0 +1,4 @@
+Iteration #: 1
+                Original Transcription:  I explained to Antonia how this meant that he was 24 years old, that he must have been there when white men first came, left on from buffalo and Indian times.
+                Attack Transcription:  I explained to Anthony how this meant that he was 24 years old, that he must have been there when white men first came, left on from Buffalo in Indian times.
+                MSE: 0.03238688178813035

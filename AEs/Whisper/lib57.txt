@@ -1,0 +1,4 @@
+Iteration #: 1
+                Original Transcription:  We decided that Antonia should ride Dude home and I would walk.
+                Attack Transcription:  We decided that Antonia should ride dude home and I would walk.
+                MSE: 0.03587004369341318

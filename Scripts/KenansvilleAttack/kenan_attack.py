@@ -467,7 +467,7 @@ if __name__ == '__main__':
     audio_file = args.inputfile.split('/')[-1]
     raster_width = [100]
 
-    models = [wav2vec]
+    models = [whisper_medium]
     attack = [args.attack]
     start = datetime.datetime.now()
     # Run attack

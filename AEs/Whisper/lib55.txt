@@ -1,0 +1,4 @@
+Iteration #: 1
+                Original Transcription:  Look, Tony, that's his poison, I said.
+                Attack Transcription:  Look, Tony, that's his poison, I said.
+                MSE: 0.04914522354624393

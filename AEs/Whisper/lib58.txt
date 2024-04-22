@@ -1,0 +1,4 @@
+Iteration #: 1
+                Original Transcription:  I followed with a spade over my shoulder, dragging my snake.
+                Attack Transcription:  I followed with a spade over my shoulder, dragging my snake.
+                MSE: 0.03270962928325069
