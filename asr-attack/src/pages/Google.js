@@ -64,10 +64,6 @@ export default function Google() {
         setSelectedOption(event.target.value);
     };
 
-    const handleSelectChange = (event) => {
-        setSelectedOption(event.target.value);
-    };
-
     const [isPlaying1, setIsPlaying1] = useState(false);
     const [isPlaying2, setIsPlaying2] = useState(false);
     const [audio1, setAudio1] = useState(null);
