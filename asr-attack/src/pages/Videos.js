@@ -14,28 +14,28 @@ export default function Videos() {
                 </Paper>
                 <br />
                 <Paper sx={{ padding: 2, backgroundColor: '#f5f5f5' }}>
-                    <Typography variant="h4" gutterBottom sx={{ textAlign: 'center' }}>Video 1</Typography>
+                    <Typography variant="h4" gutterBottom sx={{ textAlign: 'center' }}>Project Video</Typography>
                     <Box sx={{ display: 'flex', justifyContent: 'center' }}>
                         <video src={video1} width="600" height="300" controls />
                     </Box>
                 </Paper>
                 <br />
                 <Paper sx={{ padding: 2, backgroundColor: '#f5f5f5' }}>
-                    <Typography variant="h4" gutterBottom sx={{ textAlign: 'center' }}>Video 2</Typography>
+                    <Typography variant="h4" gutterBottom sx={{ textAlign: 'center' }}>Raspberry Pi Set Up</Typography>
                     <Box sx={{ display: 'flex', justifyContent: 'center' }}>
                         <video src={video2} width="600" height="300" controls />
                     </Box>
                 </Paper>
                 <br />
                 <Paper sx={{ padding: 2, backgroundColor: '#f5f5f5' }}>
-                    <Typography variant="h4" gutterBottom sx={{ textAlign: 'center' }}>Video 3</Typography>
+                    <Typography variant="h4" gutterBottom sx={{ textAlign: 'center' }}>Google Transcriptions</Typography>
                     <Box sx={{ display: 'flex', justifyContent: 'center' }}>
                         <video src={video3} width="600" height="300" controls />
                     </Box>
                 </Paper>
                 <br />
                 <Paper sx={{ padding: 2, backgroundColor: '#f5f5f5' }}>
-                    <Typography variant="h4" gutterBottom sx={{ textAlign: 'center' }}>Video 4</Typography>
+                    <Typography variant="h4" gutterBottom sx={{ textAlign: 'center' }}>Amazon Transcriptions</Typography>
                     <Box sx={{ display: 'flex', justifyContent: 'center' }}>
                         <video src={video4} width="600" height="300" controls />
                     </Box>
