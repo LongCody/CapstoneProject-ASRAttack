@@ -64,9 +64,21 @@ export default function Wav2vec2() {
         setSelectedOption(event.target.value);
     };
 
-    const handlePlayButtonClick = (wavFile) => {
-        const audio = new Audio(wavFile);
-        audio.play();
+    const [isPlaying1, setIsPlaying1] = useState(false);
+    const [isPlaying2, setIsPlaying2] = useState(false);
+    const [audio1, setAudio1] = useState(null);
+    const [audio2, setAudio2] = useState(null);
+    const handlePlayButtonClick = (wavFile, isPlaying, setIsPlaying, audioState, setAudioState) => {
+        if (isPlaying) {
+            audioState.pause();
+            setIsPlaying(false);
+        } else {
+            const audio = new Audio(wavFile);
+            audio.play();
+            audio.onended = () => setIsPlaying(false);
+            setIsPlaying(true);
+            setAudioState(audio);
+        }
         console.log(`Playing ${wavFile}`);
     };
 
@@ -108,12 +120,12 @@ export default function Wav2vec2() {
                                 <Grid item xs={6}>
                                     <img src={fileList[selectedOption].pngFiles[0]} alt="PNG Image 1" style={{ maxWidth: '100%', height: 'auto' }} />
                                     <Typography variant="body1" gutterBottom><b>Spectragram of Original Audio</b></Typography>
-                                    <Button variant="contained" onClick={() => handlePlayButtonClick(fileList[selectedOption].wavFiles[0])}>Play Audio 1</Button>
+                                    <Button variant="contained" onClick={() => handlePlayButtonClick(fileList[selectedOption].wavFiles[0], isPlaying1, setIsPlaying1, audio1, setAudio1)} sx={{ boxShadow: isPlaying1 ? 'inset 0px 4px 10px rgba(0, 0, 0, 0.3)' : '0px 4px 10px rgba(0, 0, 0, 0.3)' }}>{isPlaying1 ? 'Stop Audio 1' : 'Play Audio 1'}</Button>                                
                                 </Grid>
                                 <Grid item xs={6}>
                                     <img src={fileList[selectedOption].pngFiles[1]} alt="PNG Image 2" style={{ maxWidth: '100%', height: 'auto' }} />
                                     <Typography variant="body1" gutterBottom><b>Spectragram of Attack Audio</b></Typography>
-                                    <Button variant="contained" onClick={() => handlePlayButtonClick(fileList[selectedOption].wavFiles[1])}>Play Audio 2</Button>
+                                    <Button variant="contained" onClick={() => handlePlayButtonClick(fileList[selectedOption].wavFiles[1], isPlaying2, setIsPlaying2, audio2, setAudio2)} sx={{ boxShadow: isPlaying2 ? 'inset 0px 4px 10px rgba(0, 0, 0, 0.3)' : '0px 4px 10px rgba(0, 0, 0, 0.3)' }}>{isPlaying2 ? 'Stop Audio 2' : 'Play Audio 2'}</Button>                                
                                 </Grid>
                             </Grid>
                         </Grid>
