@@ -1,6 +1,6 @@
 import { Box, Typography, Paper, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
-import video1 from "./videos/video1.mp4";
+import ReactPlayer from 'react-player';
 import video2 from "./videos/video2.mp4";
 import video3 from "./videos/video3.mp4";
 import video4 from "./videos/video4.mp4";
@@ -16,7 +16,7 @@ export default function Videos() {
                 <Paper sx={{ padding: 2, backgroundColor: '#f5f5f5' }}>
                     <Typography variant="h4" gutterBottom sx={{ textAlign: 'center' }}>Project Video</Typography>
                     <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                        <video src={video1} width="600" height="300" controls />
+                        <ReactPlayer url="https://www.youtube.com/watch?v=nmwzV6JjPe4" width="600px" height="300px" controls />
                     </Box>
                 </Paper>
                 <br />
