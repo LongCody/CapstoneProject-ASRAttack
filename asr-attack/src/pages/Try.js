@@ -2,12 +2,28 @@ import { Box, Typography, Paper, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 function rpiScript(){
-    var test = window.open("", "test_window", "width=600,height=800");  
-    test.document.write("<p> This is an example window! We will run python scripts in here and show console outputs! </p>");
+    var test = window.open("", "test_window", "width=700,height=350");  
+   
+    setTimeout(() => {
+        test.document.write("<p><b> This is an example window! We will run a python scripts in here and show console outputs when implemented! </b></p>");
+    }, 500); // 2000 milliseconds = 2 seconds
+    setTimeout(() => {
+        test.document.write("<p><i> Program is initializing..... <b><i> (Note: This part is currently for display and is not fully function) </b></i></i></p>");
+    }, 2200);
+    
+    //insert code here to connect python script with js code
 
-    test.document.write("<p> Program is initializing... </p>");
+    setTimeout(() => {
+        test.document.write("<p> Program has now started! </p>");
+    }, 5500); 
 
-    test.document.write("<p> Now listening... (Say an input such as Hey, Google or Hey, Alexa) </p>");
+    setTimeout(() => {
+        test.document.write("<p> listening for user input..... <i> (Hint: Say an input such as Hey, Google or Hey, Siri) </i></p>");
+    }, 6750);
+
+    setTimeout(() => {
+        test.document.write("<p><b> End of Script! </b></p>");
+    }, 7750);
 }
 
 export default function Try() {
