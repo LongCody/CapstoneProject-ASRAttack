@@ -2,7 +2,12 @@ import { Box, Typography, Paper, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 function rpiScript(){
-    window.open("PyCode.html", "_blank");
+    var test = window.open("", "test_window", "width=600,height=800");  
+    test.document.write("<p> This is an example window! We will run python scripts in here and show console outputs! </p>");
+
+    test.document.write("<p> Program is initializing... </p>");
+
+    test.document.write("<p> Now listening... (Say an input such as Hey, Google or Hey, Alexa) </p>");
 }
 
 export default function Try() {
