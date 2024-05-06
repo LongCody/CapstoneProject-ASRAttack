@@ -1,0 +1,4 @@
+-- to run the script
+cd into directory the folder is in then enter the command
+
+python -m flask --app app.py run
